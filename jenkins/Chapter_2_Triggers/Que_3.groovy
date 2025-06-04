@@ -1,20 +1,19 @@
-// Q3: Scenario - You need to run a pipeline every night at 2:00 AM. 
+// 🔹 Q3: Scenario - You need to run a pipeline every night at 2:00 AM. 
 // How would you configure the trigger?
 
 pipeline {
     agent any
-    triggers{
-        cron('0 2 * * *')
+    triggers {
+        cron('0 2 * * *') //Runs daily at 2:00 AM
     }
     stages {
         stage('Nightly Build') {
             steps {
-                echo "Running Nightly Build"
+                echo 'Running Nightly Build'
             }
         }
     }
 }
-
 
 //CRON Syntax
 

@@ -16,3 +16,14 @@ pipeline {
         }
     }
 }
+
+
+// Syntax
+
+// H/15 * * * *
+// |    | | | |
+// |    | | | +----- Day of the week (every day)
+// |    | | +------- Month (every month)
+// |    | +--------- Day of the month (every day)
+// |    +----------- Hour (every hour)
+// +---------------- Minute (every 15 minutes, with hash-based offset)
