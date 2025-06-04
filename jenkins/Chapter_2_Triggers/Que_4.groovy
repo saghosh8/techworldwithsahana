@@ -6,24 +6,14 @@
 pipeline {
     agent any
     triggers {
-        pollSCM('H/15 * * * *') // Poll every 15 minutes
+        pollSCM('H/15 * * * *') //Poll Every 15 Min
     }
     stages {
         stage('Check SCM Changes') {
             steps {
-                echo 'Polling SCM for changes...'
+                //WorkFlow Commands
             }
         }
     }
 }
 
-
-// Syntax
-
-// H/15 * * * *
-// |    | | | |
-// |    | | | +----- Day of the week (every day)
-// |    | | +------- Month (every month)
-// |    | +--------- Day of the month (every day)
-// |    +----------- Hour (every hour)
-// +---------------- Minute (every 15 minutes, with hash-based offset)

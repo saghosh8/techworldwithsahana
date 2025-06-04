@@ -1,26 +1,19 @@
-// 🔹 Q3: Scenario - You need to run a pipeline every night at 2:00 AM. 
-// How would you configure the trigger?
+// Automation Scenario - 
+// Automate Jenkins Pipeline to trigger at 2 AM
 
 pipeline {
     agent any
-    triggers {
-        cron('0 2 * * *') //Runs daily at 2:00 AM
+    triggers{
+        cron ('0 2 * * *')
     }
     stages {
-        stage('Nightly Build') {
+        stage ('Nightly Build') {
             steps {
-                echo 'Running Nightly Build'
+                //Your Workflow commands/Steps Go Here
             }
         }
     }
 }
 
-//CRON Syntax
 
-// 0 2 * * *
-// | | | | |
-// | | | | +----- Day of the week (every day)
-// | | | +------- Month (every month)
-// | | +--------- Day of the month (every day)
-// | +----------- Hour (2 AM)
-// +------------- Minute (0 minute)
+

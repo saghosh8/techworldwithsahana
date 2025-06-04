@@ -1,29 +1,32 @@
-// Automation Scenario - 
-// Automate Jenkins Pipeline to trigger at 2 AM
+// Default syntax of Jenkinsfile
 
-pipeline {
-    agent any
-    triggers {
-        cron ('0 2 * * *')
-    }
+pipeline {  
+    // 👉 This is like saying:
+    // “Hey Jenkins, I’m starting a new pipeline!”
+    // Everything we write will go inside this block.
+
+    agent any  
+    // 👉 This tells Jenkins:
+    // “Run this pipeline on any available machine (agent).”
+    // No need to choose a specific one. Jenkins will pick what’s free.
+
     stages {
-        stage ('Build') {
+        // 👉 This means:
+        // “Now I’ll write all the steps to do – like build, test, deploy.”
+        // You can add one or more stages inside this.
+
+        stage('Build') {
+            // 👉 This is one step or phase of the pipeline.
+            // We are giving it a name – here it is 'Build'.
+            // You can also have 'Test', 'Deploy', etc.
+
             steps {
-                //Your WorkFlow Commands Here
+                // 👉 This is where we write the actual commands.
+                // Jenkins will run whatever we write inside this block.
+                echo 'Building the application...'
+                // 👉 This just prints a message on the console.
+                // You can replace it with real build commands later.
             }
         }
     }
 }
-
-
-// CRON Syntax (Jenkins)
-// ────────────────────────────────────────────
-//   0   2   *   *   *
-//   │   │   │   │   │
-//   │   │   │   │   └──► Day of the week (0-7 or SUN-SAT) → Every day
-//   │   │   │   └──────► Month (1-12 or JAN-DEC) → Every month
-//   │   │   └──────────► Day of the month (1-31) → Every day
-//   │   └──────────────► Hour (0-23) → 2 AM
-//   └──────────────────► Minute (0-59) → At minute 0
-// ────────────────────────────────────────────
-// Example: Runs every day at **2:00 AM**
