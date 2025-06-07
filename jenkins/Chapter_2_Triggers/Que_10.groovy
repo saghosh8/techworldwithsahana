@@ -4,12 +4,13 @@
 pipeline {
     agent any
     triggers {
-        cron('H 0-12,14-23 * * *') // Every hour except 1 PM
+        cron('0 0-12,14-23 * * *')
     }
     stages {
         stage('Hourly Build') {
             steps {
                 echo 'Running hourly build (outside lunch hour)...'
+                //Your WorkFlow Commands
             }
         }
     }
