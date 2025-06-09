@@ -5,7 +5,10 @@
 
 pipeline {
     agent any
-
+    trigger {
+        cron('0 3 * * *')
+        pollSCM('H/30 * * * *')
+    }
     stages {
         stage('Combined Trigger') {
             steps {
