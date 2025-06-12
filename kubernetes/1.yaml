@@ -1,12 +1,14 @@
-#File Name: pod.yml
+# 1. You have a Spring Boot app that needs to run 
+# as a single container pod exposing port 8080. 
+# How would you define the pod YAML?
 
 apiVersion: v1
 kind: Pod
 metadata:
-  name: 
+  name: springboot-app
 spec:
   containers:
-    - name: 
-      image: 
+    - name: springboot-app-container
+      image: myrepo/springboot-app:1.0
       ports:
-        - containerPort: 
+        - containerPort: 8080
