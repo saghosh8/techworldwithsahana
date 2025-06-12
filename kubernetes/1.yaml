@@ -1,0 +1,12 @@
+#File Name: pod.yml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 
+spec:
+  containers:
+    - name: 
+      image: 
+      ports:
+        - containerPort: 
