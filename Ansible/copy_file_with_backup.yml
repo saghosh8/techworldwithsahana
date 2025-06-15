@@ -1,0 +1,17 @@
+# How will you copy a file from the control node 
+# to managed nodes using Ansible 
+# and take backup of the previous file
+
+---
+- name: Copy file to managed nodes with backup
+  hosts: all
+  become: yes
+  tasks:
+    - name: 
+      ansible.builtin.copy:
+        src: 
+        dest: 
+        owner: 
+        group: 
+        mode: 
+        backup: 

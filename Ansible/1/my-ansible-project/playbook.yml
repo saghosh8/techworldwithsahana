@@ -1,0 +1,16 @@
+# 1. Write an Ansible task to upload a configuration file 
+# to 20 web servers under /etc/httpd/conf/.
+
+- name: Upload Apache config file to 20 web servers
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Copying Files
+      copy: 
+        src: httpd.conf
+        dest: /etc/httpd/conf/httpd.conf
+        owner: root
+        group: root
+        mode: '0644'
+
+
