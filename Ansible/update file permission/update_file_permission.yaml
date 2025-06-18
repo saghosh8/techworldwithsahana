@@ -1,0 +1,13 @@
+---
+- name: Update file permissions on web servers
+  hosts: WebServers
+  become: true
+  tasks:
+    - name: Updating File permissions
+      ansible.builtin.file:
+        path: /etc/myconfig.conf
+        owner: root
+        group: root
+        mode: '0644'
+
+

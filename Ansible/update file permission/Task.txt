@@ -1,0 +1,2 @@
+3. A vulnerability scan reports that `/etc/myconfig.conf` has world-writable permissions. Fix this by setting proper ownership and permissions.
+   ➡️  (use `file` module with `owner: root`, `mode: 0644`) 

@@ -1,0 +1,23 @@
+# Your application needs to run with guaranteed 
+# minimum 250m CPU  and 256Mi memory, but not 
+# exceed Limit of  500m CPU & 512Mi Memory
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-with-resources
+  labels:
+    app: resource-demo
+spec:
+  containers:
+    - name: app
+      image: node:18  
+      resources:
+        requests: 
+          cpu: "250m"
+          memory: "256Mi"
+        limits:
+          cpu: "500m"
+          memory: "512Mi"
+      ports:
+        - containerPort: 3000
