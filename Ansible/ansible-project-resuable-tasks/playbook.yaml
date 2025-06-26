@@ -1,0 +1,6 @@
+---
+- name: Common setup on all servers
+  hosts: webservers
+  become: yes
+  roles:
+    - common_setup
