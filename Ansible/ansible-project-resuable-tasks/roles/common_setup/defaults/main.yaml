@@ -1,0 +1,15 @@
+---
+common_packages:
+  - vim
+  - git
+  - curl
+
+common_user: deploy
+common_user_shell: /bin/bash
+
+services_to_enable:
+  - nginx
+  - ssh
+
+security_settings:
+  disable_root_ssh: true
