@@ -1,0 +1,28 @@
+---
+- name: Install common packages
+  package:
+    name: "{{ common_packages }}"
+    state: present
+
+- name: Create common user
+  user:
+    name: "{{ common_user }}"
+    shell: "{{ common_user_shell }}"
+    state: present
+    create_home: yes
+
+- name: Enable and start services
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  loop: "{{ services_to_enable }}"
+  notify: Restart Services
+
+- name: Disable root SSH if needed
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PermitRootLogin'
+    line: 'PermitRootLogin no'
+  when: security_settings.disable_root_ssh
+  notify: Restart SSH
